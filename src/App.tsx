@@ -10,6 +10,8 @@ import classes from "./container.module.css";
 function App(): JSX.Element {
   return (
     <div className={classes.container}>
+      {/* ВРЕМЕННО ПОКА ВСЕ СТРАНИЦЫ ОДНА ЗА ОДНОЙ
+     СОБЫТИЯ ЕЩЕ НЕ ОБРАБАТЫВАЛ */}
       <Header />
       <MainPageContent />
       <Registration />
