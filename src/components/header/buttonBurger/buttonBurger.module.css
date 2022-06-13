@@ -1,0 +1,33 @@
+.burgerBtn {
+  display: block;
+  position: relative;
+  width: 2rem;
+  height: 1.6rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.burgerBtnItem {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: blue;
+  transform: rotate(0deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.burgerBtnItem:nth-child(1) {
+  width: 70%;
+}
+
+.burgerBtnItem:nth-child(2) {
+  top: 0.7rem;
+}
+
+.burgerBtnItem:nth-child(3) {
+  top: 1.4rem;
+}
