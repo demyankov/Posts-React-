@@ -11,7 +11,11 @@
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "css-in-js": "1.1.0",
+<<<<<<< HEAD
     "emotion": "11.0.0",
+=======
+    "emotion": "^11.0.0",
+>>>>>>> 8edd7775e98da8c423d1a9219705a3beac71db01
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-scripts": "5.0.1",
