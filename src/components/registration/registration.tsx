@@ -10,9 +10,9 @@ function Registration(): JSX.Element {
       <LoginRegistration />
       <Input label="Email" />
       <Input label="Password" />
-      <div className={classes.buttonWrapper}>
-        <Button buttonText="Login" />
-      </div>
+      {/* <div className={classes.buttonWrapper}> */}
+        <Button buttonText="Login" maxWidth = '100%'/>
+      {/* </div> */}
       <p className={classes.resert}>
         Forgot your password? <a href="#">Resert password</a>
       </p>

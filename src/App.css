@@ -10,12 +10,12 @@
 .App {
   padding: 1rem;
   min-height: 100vh;
-  background-color: rgb(130, 124, 124);
+  background-color: rgb(233, 233, 233);
 }
 
 .postsListWrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap;  
   gap: 1rem;
+  margin-top: 1rem;
 }

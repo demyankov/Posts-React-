@@ -1,7 +1,7 @@
-import Post from "./dataType";
+import PostType from "./dataType";
 
 //Данные с сервера
-let postsData: Post[] = [
+let postsData: PostType[] = [
   {
     id: 0,
     image: "https://miro.medium.com/max/1200/0*95pljiM8DQD6NqK-.png",

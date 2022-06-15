@@ -1,4 +1,4 @@
-type Post = {
+type PostType = {
   id: number;
   image?: string;
   text: string;
@@ -8,4 +8,4 @@ type Post = {
   author: number;
 };
 
-export default Post;
+export default PostType;

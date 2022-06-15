@@ -1,19 +1,14 @@
-import React from "react";
 import classes from "./button.module.css";
+import { ButtonWrapper, A } from "./buttonStyles";
+import { Buttons } from "./buttonType";
 
-interface Props
-  extends Omit<
-    React.HTMLAttributes<HTMLButtonElement>,
-    "title" | "style" | "className"
-  > {
-  buttonText: string;
-}
-
-function Button({ buttonText }: Props) {
+function Button({ buttonText, maxWidth, ...otherProps }: Buttons) {
   return (
-    <a href="https://google.com" className={classes.button}>
-      {buttonText}
-    </a>
+    <ButtonWrapper maxWidth = {maxWidth}>
+      <A href="https://google.com" className={classes.button}>
+        {buttonText}
+      </A>
+    </ButtonWrapper>
   );
 }
 

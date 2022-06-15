@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "./postsCard/card";
-import postsData from "./data";
+import PostType from "../../../data/dataType";
 
-function PostsList(): any {
+function PostsList({postsData}:{postsData:PostType[]}): any {
   const card = postsData.map((post) => (
     <Card
       url={post.image ? post.image : ""}

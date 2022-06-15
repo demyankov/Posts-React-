@@ -8,9 +8,9 @@ function Confirmation(): JSX.Element {
     <div className={classes.confirmationWrapper}>
       <Title />
       <Text />
-      <div className={classes.buttonWrapper}>
-        <Button buttonText="Home" />
-      </div>
+      {/* <div className={classes.buttonWrapper}> */}
+        <Button buttonText="Home" maxWidth = '15rem'/>
+      {/* </div> */}
     </div>
   );
 }
