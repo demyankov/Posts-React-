@@ -1,0 +1,20 @@
+.registrationWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonWrapper {
+  max-width: 100%;
+  width: 100%;
+}
+
+.resert a {
+  color: blue;
+}

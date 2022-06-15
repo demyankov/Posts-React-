@@ -1,0 +1,14 @@
+.burgerBtnItem:nth-child(1) {
+  top: 50%;
+  transform: rotate(495deg);
+}
+
+.burgerBtnItem:nth-child(2) {
+  opacity: 0;
+  left: -100px;
+}
+
+.burgerBtnItem:nth-child(3) {
+  top: 50%;
+  transform: rotate(-495deg);
+}
