@@ -10,6 +10,8 @@
     "@types/node": "16.11.39",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
+    "css-in-js": "1.1.0",
+    "emotion": "^11.0.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-scripts": "5.0.1",
@@ -39,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-css-in-js": "1.5.1"
   }
 }
