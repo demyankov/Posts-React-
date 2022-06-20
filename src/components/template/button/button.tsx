@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import classes from "./button.module.css";
 
@@ -14,6 +15,19 @@ function Button({ buttonText }: Props) {
     <a href="https://google.com" className={classes.button}>
       {buttonText}
     </a>
+=======
+import classes from "./button.module.css";
+import { ButtonWrapper, A } from "./buttonStyles";
+import { Buttons } from "./buttonType";
+
+function Button({ buttonText, maxWidth, ...otherProps }: Buttons) {
+  return (
+    <ButtonWrapper maxWidth = {maxWidth}>
+      <A href="https://google.com" className={classes.button}>
+        {buttonText}
+      </A>
+    </ButtonWrapper>
+>>>>>>> HW_39
   );
 }
 
