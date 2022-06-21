@@ -1,29 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Input from "../template/input/input";
 import Button from "../template/button/button";
 import LoginRegistration from "./login_registration/login_registration";
-import classes from "./registration.module.css";
+import Confirmation from "./confirmation/confirmation";
+import {RegistrationWrapper, Resert} from "./registrationStyles";
 
 function Registration(): JSX.Element {
-  return (
-    <div className={classes.registrationWrapper}>
+  const [registrationStatus, getRegistrationStatus] = useState (false)
+
+    if (registrationStatus) {
+      return <Confirmation/> }
+
+      return (
+      <RegistrationWrapper>
       <LoginRegistration />
       <Input label="Email" />
       <Input label="Password" />
-<<<<<<< HEAD
-      <div className={classes.buttonWrapper}>
-        <Button buttonText="Login" />
-      </div>
-=======
-      {/* <div className={classes.buttonWrapper}> */}
-        <Button buttonText="Login" maxWidth = '100%'/>
-      {/* </div> */}
->>>>>>> HW_39
-      <p className={classes.resert}>
+      <Button buttonText="Login" maxWidth = '100%' click={()=>{getRegistrationStatus(!registrationStatus)}}/>  
+      <Resert>
         Forgot your password? <a href="#">Resert password</a>
-      </p>
-    </div>
-  );
+      </Resert>
+    </RegistrationWrapper>);
+ 
+  
+  
 }
 
 export default Registration;

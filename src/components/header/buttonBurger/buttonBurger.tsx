@@ -1,13 +1,14 @@
 import React from "react";
 import classes from "./buttonBurger.module.css";
+import { BurgerBtn, BurgerBtnItem } from "./buttonBurgerStyles";
 
 function ButtonBurger() {
   return (
-    <button onClick={toggleMenuMode} className={classes.burgerBtn}>
-      <span className={classes.burgerBtnItem}></span>
-      <span className={classes.burgerBtnItem}></span>
-      <span className={classes.burgerBtnItem}></span>
-    </button>
+    <BurgerBtn onClick={toggleMenuMode}>
+      <BurgerBtnItem/>
+      <BurgerBtnItem/>
+      <BurgerBtnItem/>
+    </BurgerBtn>
   );
 }
 

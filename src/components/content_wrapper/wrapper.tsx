@@ -9,13 +9,7 @@ function MainPageContent() {
     <div className={classes.wrapper}>
       <ContentHeader />
       <Content text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis ..." />
-<<<<<<< HEAD
-      <div className={classes.buttonWrapper}>
-        <Button buttonText="Learn More" />
-      </div>
-=======
       <Button buttonText="Learn More" maxWidth = '15rem'/>
->>>>>>> HW_39
     </div>
   );
 }

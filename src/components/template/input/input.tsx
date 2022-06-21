@@ -1,12 +1,13 @@
 import React from "react";
 import classes from "./input.module.css";
+import { InputWrapper, Label, InputTag } from "./inputStyles";
 
 function Input({ label }: { label: String }): JSX.Element {
   return (
-    <div className={classes.wrapper}>
-      <label className={classes.label}>{label}</label>
-      <input className={classes.input} type="text" />
-    </div>
+    <InputWrapper>
+      <Label>{label}</Label>
+      <InputTag type="text" />
+    </InputWrapper>
   );
 }
 

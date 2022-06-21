@@ -1,4 +1,3 @@
-import { ReactJSXElement } from '@emotion/react/types/jsx-namespace'
 import styled from '@emotion/styled'
 
 export const SuccessWrapper = styled.div`

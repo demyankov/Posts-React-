@@ -1,23 +1,18 @@
 import React from "react";
 import classes from "./card.module.css";
-
-type CardType = {
-  url: string;
-  cardTitle: string;
-  cardText: string;
-  cardDate: string;
-};
+import { CardDate, CardImage, CardImageWrapper, CardText, CardTitle, CardWrapper } from "./cardStyle";
+import { CardType } from "./cardType";
 
 function Card({ url, cardTitle, cardText, cardDate }: CardType): JSX.Element {
   return (
-    <div className={classes.cardWrapper}>
-      <div className={classes.cardImageWrapper}>
-        <img className={classes.cardImage} src={url} alt="About post" />
-      </div>
-      <h3 className={classes.cardTitle}>{cardTitle}</h3>
-      <p className={classes.cardText}>{cardText}</p>
-      <p className={classes.cardDate}>{cardDate}</p>
-    </div>
+    <CardWrapper>
+      <CardImageWrapper>
+        <CardImage src={url} alt="About post" />
+      </CardImageWrapper>
+      <CardTitle>{cardTitle}</CardTitle>
+      <CardText>{cardText}</CardText>
+      <CardDate>{cardDate}</CardDate>
+    </CardWrapper>
   );
 }
 

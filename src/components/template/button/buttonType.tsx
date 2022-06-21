@@ -5,4 +5,5 @@ export interface Buttons
   > {
   buttonText: string;
   maxWidth: string;
+  click?: any;
 }

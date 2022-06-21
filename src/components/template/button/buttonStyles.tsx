@@ -19,6 +19,12 @@ export const A = styled.a`
     text-align: center;
     max-width: 100%;
     width: 100%;
+
+    
+&:hover {
+    background-color: #fff;
+    color: blue;
+  }
 `
 
   

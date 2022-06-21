@@ -3,6 +3,7 @@ import ButtonBurger from "./buttonBurger/buttonBurger";
 import UserIcon from "./userIcon/userIcon";
 import UserName from "./userName/userName";
 import classes from "./header.module.css";
+import { HeaderWrapper } from "./headerStyles";
 
 // type Props = {
 //   header: string;
@@ -13,12 +14,12 @@ import classes from "./header.module.css";
 
 function Header() {
   return (
-    <header className={classes.header}>
-      <div className={classes.disactive}>
+  <header>
+      <HeaderWrapper>
         <ButtonBurger />
         <UserIcon />
         <UserName username="Alexandr" />
-      </div>
+      </HeaderWrapper>
     </header>
   );
 }

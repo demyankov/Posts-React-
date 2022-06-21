@@ -1,16 +1,16 @@
 import React from "react";
-import classes from "./loginRegistration.module.css";
+import { RegistrationButton, RegistrationWrapper } from "./loginRegistrationStyles";
 
 function LoginRegistration(): JSX.Element {
   return (
-    <div className={classes.wrapper}>
-      <a className={classes.button} href="#">
+    <RegistrationWrapper>
+      <RegistrationButton href="#">
         Login
-      </a>
-      <a className={classes.button} href="#">
+      </RegistrationButton>
+      <RegistrationButton href="#">
         Registration
-      </a>
-    </div>
+      </RegistrationButton>
+    </RegistrationWrapper>
   );
 }
 
