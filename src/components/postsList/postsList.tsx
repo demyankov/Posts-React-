@@ -1,10 +1,10 @@
 import React from "react";
+import { PostType } from "../../data/dataType";
 import Card from "./postsCard/card";
-import postsData from "./data";
 
-function PostsList(): any {
-  const card = postsData.map((post) => (
-    <Card
+function PostsList({postsData} : {postsData:PostType[]}){
+  const card = postsData.map((post:PostType) => (
+    <Card 
       url={post.image ? post.image : ""}
       cardTitle={post.title}
       cardText={post.text}

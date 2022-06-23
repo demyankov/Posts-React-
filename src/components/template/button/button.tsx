@@ -10,3 +10,4 @@ function Button({ buttonText, maxWidth, click, ...otherProps }: Buttons) {
 }
 
 export default Button;
+

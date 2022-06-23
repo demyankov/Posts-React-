@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./postsCard/card";
-import PostType from "../../../data/dataType";
+import {PostType} from "../../../data/dataType";
 
 function PostsList({postsData}:{postsData:PostType[]}): any {
   const card = postsData.map((post) => (

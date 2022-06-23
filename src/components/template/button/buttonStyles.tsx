@@ -2,7 +2,7 @@
 import styled from '@emotion/styled'
 
 export let ButtonWrapper = styled.div<{maxWidth:string}>`
-max-width: ${props => props.maxWidth};
+max-width: ${props => props.maxWidth} ;
 width:100%;
 height:auto;
 `
