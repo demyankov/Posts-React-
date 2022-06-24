@@ -1,8 +1,8 @@
-import Button from "../../template/button/button";
+import Button from "../../../components/button/button";
 import styled from '@emotion/styled'
 import { P } from "../registrationStyles";
 import {SuccessWrapper} from './successStyles'
-import Title from "../../template/title/title";
+import Title from "../../../components/title/title";
 
 function Success(): JSX.Element {
   return (

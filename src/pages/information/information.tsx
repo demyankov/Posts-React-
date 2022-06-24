@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { H2 } from "../../components/title/tittleStyles";
 import { InformationType } from "../../data/dataType";
-import { H2 } from "../template/title/tittleStyles";
 import { TabBar, Text, Wrapper} from "./informationSlyles";
 import Tab from "./tab/tab";
 

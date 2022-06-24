@@ -1,13 +1,13 @@
-import MainPageContent from "./components/content_wrapper/wrapper";
+import MainPage from "./pages/mainPage/mainPage";
 import Header from "./components/header/header";
-import PostsPage from "./components/posts/postsPage";
-import Registration from "./components/registration/registration";
+import Registration from "./pages/registration/registration";
 import {PostType, InformationType} from '../src/data/dataType'
-import Confirmation from "./components/registration/confirmation/confirmation";
-import Success from "./components/registration/success/success";
-import Information from "./components/information/information";
+import Success from "./pages/registration/success/success";
 import {ThemeProvider} from "@emotion/react";
 import { AppWrapper, Container } from "./AppStyles";
+import Confirmation from "./pages/registration/registrationResult/confirmation";
+import PostsPage from "./pages/posts/postsPage";
+import Information from "./pages/information/information";
 
 const theme = {
   bgcolor: {
@@ -22,7 +22,7 @@ function App({postsData, informationData}:{postsData:PostType[], informationData
   <AppWrapper>
     <Container>          
       <Header />
-      <MainPageContent />
+      <MainPage/>
       <Registration />
       <Confirmation/>
       <Success />

@@ -1,9 +1,8 @@
-import Button from "../template/button/button"
-import PostsList from "./postsList/postsList";
 import { SectionPostsHeader, SectionPosts, PostsListWrapper } from './postsPageStyle';
 import {PostType} from '../../data/dataType';
-import { H1 } from "../template/styles/H1Styles";
-import { H2 } from "../template/title/tittleStyles";
+import Card from "./postsCard/card";
+import Button from '../../components/button/button';
+import { H2 } from '../../components/title/tittleStyles';
 
 
 const PostsPage = ({postsData, title, isAllPosts}:{postsData:PostType[]; title:string ;isAllPosts?:boolean}) =>{
@@ -13,8 +12,16 @@ return (<
             <H2>{title}</H2>         
             {isAllPosts ? <Button buttonText = 'Add' maxWidth = '6rem'/>: null}       
         </SectionPostsHeader>
-        <PostsListWrapper>
-            <PostsList postsData = {postsData}/>
+        <PostsListWrapper>          
+            {postsData.map((post) => (
+                <Card
+                  url={post.image ? post.image : ""}
+                  cardTitle={post.title}
+                  cardText={post.text}
+                  cardDate={post.date}
+                  key={post.id}
+                />
+              ))}
         </PostsListWrapper>
     </SectionPosts>)
 }

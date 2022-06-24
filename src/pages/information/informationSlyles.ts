@@ -9,7 +9,6 @@ gap:2rem;
 `
 
 export const TabBar = styled.ul`
-list-style-type: none;
 display: flex;
 gap:1rem;
 `

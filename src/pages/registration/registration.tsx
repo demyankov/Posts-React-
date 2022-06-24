@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Input from "../template/input/input";
-import Button from "../template/button/button";
+import React, {useState } from "react";
+import Button from "../../components/button/button";
+import Input from "../../components/input/input";
 import LoginRegistration from "./login_registration/login_registration";
-import Confirmation from "./confirmation/confirmation";
 import {RegistrationWrapper, Resert} from "./registrationStyles";
 
 function Registration(): JSX.Element {
   const [registrationStatus, getRegistrationStatus] = useState (false)
-
-    if (registrationStatus) {
-      return <Confirmation/> }
 
       return (
       <RegistrationWrapper>
@@ -20,10 +16,7 @@ function Registration(): JSX.Element {
       <Resert>
         Forgot your password? <a href="#">Resert password</a>
       </Resert>
-    </RegistrationWrapper>);
- 
-  
-  
+    </RegistrationWrapper>); 
 }
 
 export default Registration;

@@ -1,5 +1,5 @@
-import Button from "../../template/button/button";
-import Title from "../../template/title/title";
+import Button from "../../../components/button/button";
+import Title from "../../../components/title/title";
 import { P } from "../registrationStyles";
 
 import { ConfirmationWrapper } from "./confirmationStyles";
