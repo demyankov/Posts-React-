@@ -1,12 +1,12 @@
 import React from "react";
-import classes from "./content.module.css";
+import { ContentWrapper } from "./contentStyles";
 
 type Props = {
   text: string;
 };
 
 function Content({ text }: Props) {
-  return <p className={classes.content}>{text}</p>;
+  return <ContentWrapper>{text}</ContentWrapper>;
 }
 
 export default Content;

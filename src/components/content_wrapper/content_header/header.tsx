@@ -1,11 +1,10 @@
-import React from "react";
-import classes from "./header.module.css";
+import { Header } from "./headerStyles";
 
 function ContentHeader() {
   return (
-    <h1 className={classes.header}>
+    <Header>
       Make your Blog <span>Online</span>
-    </h1>
+    </Header>
   );
 }
 

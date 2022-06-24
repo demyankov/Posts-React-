@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InformationType } from "../../data/dataType";
-import { H1 } from "../template/styles/tittleStyles";
+import { H2 } from "../template/title/tittleStyles";
 import { TabBar, Text, Wrapper} from "./informationSlyles";
 import Tab from "./tab/tab";
 
@@ -9,7 +9,7 @@ function Information({informationData}: {informationData:InformationType}): JSX.
     
     return (
       <Wrapper>
-        <H1>Information</H1>
+        <H2>Information</H2>
         <TabBar>           
                 <li><Tab label ="0" activeTab={activeTab} click={()=>{setActive(0)}}>Tab1</Tab></li>
                 <li><Tab label ="1" activeTab={activeTab} click={()=>{setActive(1)}}>Tab2</Tab></li>

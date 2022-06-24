@@ -1,6 +1,5 @@
 
 export type InformationType = Array<{text:string}> 
-// export type InformationType = any
 
 export type PostType = {
   id: number;

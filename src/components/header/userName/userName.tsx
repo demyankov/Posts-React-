@@ -1,8 +1,7 @@
-import React from "react";
-import classes from "./userName.module.css";
+import { Name } from "./userNameStyles";
 
 function UserName({ username }: { username: string }) {
-  return <p className={classes.userName}>{username}</p>;
+  return <Name>{username}</Name>;
 }
 
 export default UserName;

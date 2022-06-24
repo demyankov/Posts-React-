@@ -17,3 +17,13 @@ export const Resert = styled.p`
   color: blue;
 }
 `
+
+export const P = styled.p`
+    text-align: center;
+    font-size: 1.2rem;
+
+  & span {
+    font-size: 1.2rem;
+    color: blue;
+  }
+  `
