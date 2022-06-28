@@ -1,12 +1,13 @@
-import React from "react";
-import classes from "./input.module.css";
+import React, {useState } from "react";
 import { InputWrapper, Label, InputTag } from "./inputStyles";
 
 function Input({ label }: { label: String }): JSX.Element {
+  const [inputValue, setInputValue] = useState <string | null> (null)
+
   return (
     <InputWrapper>
       <Label>{label}</Label>
-      <InputTag type="text" />
+      <InputTag onChange = {(e)=>{setInputValue(e.target.value)}} type="text" />
     </InputWrapper>
   );
 }

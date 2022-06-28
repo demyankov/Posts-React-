@@ -1,25 +1,37 @@
 import React from "react";
-import ButtonBurgerOpen from "./buttonBurger/buttonBurgerOpen";
-import classes from "./headerOpen.module.css";
-import Posts from "./posts/posts";
+import { Link } from "react-router-dom";
+import { Wrapper } from "./headerOpenStyle";
 
-// type Props = {
-//   header: string;
-//   burgerBtn: string;
-//   userIcon: string;
-//   userName: string;
-// };
-
-function HeaderOpen() {
-  // const [isActive, toggleMenuMode] = React.useState<boolean>(false);
-  return (
-    <nav className={classes.header}>
-      <div className={classes.active}>
-        <ButtonBurgerOpen />
-        <Posts />
-      </div>
-    </nav>
-  );
+function HeaderOpenIn() {
+    return (    
+      <>
+        <div><Link to="posts">All posts</Link></div>
+        <div>
+            <Link to="posts">My posts</Link>
+            <a href="#">Add posts</a>
+        </div>
+        <div><Link to ="/">Log out</Link></div> 
+      </>      
+    ); 
 }
 
-export default HeaderOpen;
+function HeaderOpenOut() {
+  return ( 
+        <div>
+          <Link to="registration">Login</Link>
+          <Link to="registration">Registration</Link>
+        </div>     
+  ); 
+}
+
+function headerOpen() {  
+  const isLogIn = false // пока так
+
+  return (
+    <Wrapper>
+     {isLogIn ? <HeaderOpenIn/>:<HeaderOpenOut/>}   
+    </Wrapper> 
+  ); 
+}
+
+export default headerOpen;

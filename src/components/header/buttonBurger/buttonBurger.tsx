@@ -1,17 +1,15 @@
+
 import React from "react";
-import classes from "./buttonBurger.module.css";
 import { BurgerBtn, BurgerBtnItem } from "./buttonBurgerStyles";
 
-function ButtonBurger() {
+function ButtonBurger({click}:any) {
   return (
-    <BurgerBtn onClick={toggleMenuMode}>
-      <BurgerBtnItem/>
-      <BurgerBtnItem/>
-      <BurgerBtnItem/>
-    </BurgerBtn>
+          <BurgerBtn onClick={click}>        
+             <BurgerBtnItem/>
+              <BurgerBtnItem/>
+              <BurgerBtnItem/>
+          </BurgerBtn> 
   );
 }
-
-const toggleMenuMode = () => {};
 
 export default ButtonBurger;

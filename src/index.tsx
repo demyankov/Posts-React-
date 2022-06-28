@@ -8,10 +8,10 @@ import {informationData, postsData} from '../src/data/data'
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-root.render(
-  <React.StrictMode>
-    <App postsData = {postsData} informationData = {informationData}/>
-  </React.StrictMode>
+
+root.render(  
+      <App postsData = {postsData} informationData = {informationData}/> 
+
 );
 
 reportWebVitals();

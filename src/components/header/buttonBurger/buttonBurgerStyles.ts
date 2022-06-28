@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
 
-export const BurgerBtn = styled.button`
+export const BurgerBtn = styled.a`
 display: block;
 position: relative;
+margin-right: 1rem;
 width: 2rem;
 height: 1.6rem;
 border: none;
