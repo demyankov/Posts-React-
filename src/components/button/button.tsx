@@ -1,10 +1,12 @@
-import { ButtonWrapper, A } from "./buttonStyles";
+import { Children } from "react";
+import { Link } from "react-router-dom";
+import { ButtonWrapper} from "./buttonStyles";
 import { Buttons } from "./buttonType";
 
-function Button({ buttonText, maxWidth, click, ...otherProps }: Buttons) { 
+function Button({ children, maxWidth, click, url, ...otherProps }: Buttons) { 
   return (
     <ButtonWrapper maxWidth = {maxWidth}>
-      <A onClick={click}>{buttonText}</A>
+      <Link to = {url} onClick={click}>{children}</Link>
     </ButtonWrapper>
   );
 }

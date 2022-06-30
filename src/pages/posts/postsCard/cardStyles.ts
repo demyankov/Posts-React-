@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 export let CardWrapper = styled.div`
 display: flex;
@@ -21,7 +22,7 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 `
-export let CardTitle = styled.h3`
+export let CardTitle = styled(Link)`
 font-size: 1.2rem;
 font-weight: 700;
 `

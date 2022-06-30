@@ -1,18 +1,13 @@
 import ButtonBurger from "./buttonBurger/buttonBurger";
-
-import UserIcon from "./headerClose/headerClose";
-
 import {MainHeader} from "./headerStyles";
 import ThemeIcon from "./themeIcon/themeIcon";
-
 import { useState } from "react";
-import HeaderOpen from "../header_open/headerOpen";
 import HeaderClose from "./headerClose/headerClose";
+import HeaderOpen from "./headerOpen/headerOpen";
 
 function Header() {
 const [isOpen, toggleOpen] = useState(false)
 
-console.log(isOpen)
 return (
         <MainHeader open = {isOpen}>   
           <ButtonBurger click = {()=>toggleOpen(!isOpen)}/>

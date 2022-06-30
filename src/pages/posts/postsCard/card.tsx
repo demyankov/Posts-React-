@@ -1,17 +1,18 @@
+import { PostType } from "../../../data/dataType";
 import { CardDate, CardImage, CardImageWrapper, CardText, CardTitle, CardWrapper } from "./cardStyles";
-import { CardType } from "./cardType";
 
-function Card({ url, cardTitle, cardText, cardDate }: CardType): JSX.Element {
-  return (
+function Card({post}: {post:PostType}): JSX.Element {
+    return (
     <CardWrapper>
       <CardImageWrapper>
-        <CardImage src={url} alt="About post"/>      
+        <CardImage src={post.image} alt="About post"/>      
       </CardImageWrapper>
-      <CardTitle>{cardTitle}</CardTitle>
-      <CardText>{cardText}</CardText>
-      <CardDate>{cardDate}</CardDate>
+      <CardTitle to = {`/posts/${post.id}`}>{post.title}</CardTitle>
+      <CardText>{post.text}</CardText>
+      <CardDate>{post.date}</CardDate>
     </CardWrapper>
   );
 }
 
 export default Card;
+

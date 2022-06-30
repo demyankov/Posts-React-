@@ -5,10 +5,9 @@ export let ButtonWrapper = styled.div<{maxWidth:string}>`
 max-width: ${props => props.maxWidth} ;
 width:100%;
 height:auto;
-`
 
-export const A = styled.a`
-    text-decoration: none;
+
+a {  text-decoration: none;
     display: inline-block;
     padding: 0.5rem 1rem;
     background-color: blue;
@@ -20,11 +19,12 @@ export const A = styled.a`
     max-width: 100%;
     width: 100%;
 
-    
-&:hover {
+  &:hover {
     background-color: #fff;
     color: blue;
-  }
+  }  
+  }    
+
 `
 
   

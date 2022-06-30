@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AppRoute } from "../../../enums/router";
 import { Wrapper } from "./headerOpenStyle";
 
 function HeaderOpenIn() {
     return (    
       <>
-        <div><Link to="posts">All posts</Link></div>
+        <div><Link to={AppRoute.PostsPage}>All posts</Link></div>
         <div>
-            <Link to="posts">My posts</Link>
-            <a href="#">Add posts</a>
+            <Link to={AppRoute.PostsPage}>My posts</Link>
+            <Link to={AppRoute.AddPost}>Add posts</Link>            
         </div>
         <div><Link to ="/">Log out</Link></div> 
       </>      
@@ -18,14 +19,14 @@ function HeaderOpenIn() {
 function HeaderOpenOut() {
   return ( 
         <div>
-          <Link to="registration">Login</Link>
-          <Link to="registration">Registration</Link>
+          <Link to={AppRoute.SignIn}>Login</Link>
+          <Link to={AppRoute.Registration}>Registration</Link>
         </div>     
   ); 
 }
 
-function headerOpen() {  
-  const isLogIn = false // пока так
+function HeaderOpen() {  
+  const isLogIn = true // пока так
 
   return (
     <Wrapper>
@@ -34,4 +35,4 @@ function headerOpen() {
   ); 
 }
 
-export default headerOpen;
+export default HeaderOpen;

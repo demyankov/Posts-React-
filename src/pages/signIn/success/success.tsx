@@ -1,8 +1,8 @@
 import Button from "../../../components/button/button";
-import styled from '@emotion/styled'
-import { P } from "../registrationStyles";
+import { P } from "../signInStyles";
 import {SuccessWrapper} from './successStyles'
 import Title from "../../../components/title/title";
+import { AppRoute } from "../../../enums/router";
 
 function Success(): JSX.Element {
   return (
@@ -12,7 +12,7 @@ function Success(): JSX.Element {
         <P>Email confirmed</P>  
         <P>Your registration is now completed</P>  
       </div>  
-      <Button buttonText="Login" maxWidth = '15rem'/>
+      <Button url = {AppRoute.SignIn} maxWidth = '15rem'>Login</Button>
     </SuccessWrapper>
   );
 }

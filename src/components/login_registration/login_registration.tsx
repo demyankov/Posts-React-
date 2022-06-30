@@ -1,13 +1,14 @@
 import React from "react";
+import { AppRoute } from "../../enums/router";
 import { RegistrationButton, RegistrationWrapper } from "./loginRegistrationStyles";
 
 function LoginRegistration(): JSX.Element {
   return (
     <RegistrationWrapper>
-      <RegistrationButton href="#">
+      <RegistrationButton to={AppRoute.SignIn}>
         Login
       </RegistrationButton>
-      <RegistrationButton href="#">
+      <RegistrationButton to={AppRoute.Registration}>
         Registration
       </RegistrationButton>
     </RegistrationWrapper>

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export let SectionPostsHeader = styled.div`
+margin-top: 5rem;
   display:flex;
   align-items:center;
   gap:1rem;

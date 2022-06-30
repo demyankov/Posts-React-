@@ -3,7 +3,8 @@ export interface Buttons
     React.HTMLAttributes<HTMLButtonElement>,
     "title" | "style" | "className"
   > {
-  buttonText: string;
+  children?:string;
   maxWidth: string;
   click?: any;
+  url?: any;
 }

@@ -1,5 +1,6 @@
 import Button from "../../../components/button/button";
 import Title from "../../../components/title/title";
+import { AppRoute } from "../../../enums/router";
 import { P } from "../registrationStyles";
 
 import { ConfirmationWrapper } from "./confirmationStyles";
@@ -15,7 +16,7 @@ function Confirmation(): JSX.Element {
         </P>
         <P>Please check your email</P>
       </div>     
-      <Button buttonText="Home" maxWidth = '15rem'/>
+      <Button url = {AppRoute.Main} maxWidth = '15rem'>Home</Button>
     </ConfirmationWrapper>
   );
 }
