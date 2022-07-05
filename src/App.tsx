@@ -20,6 +20,9 @@ import { AppRoute } from "./enums/router";
 import Sign_in from "./pages/signIn/signIn";
 import Success from "./pages/registration/registrationResult/success";
 import NotFound from "./pages/notFound/notFound";
+import RequestResertPassword from "./pages/registration/resertPassword/requestResertPassword";
+import NewPassword from "./pages/registration/resertPassword/newPassword";
+
 
 
 export function App({postsData, informationData}:{postsData:PostType[], informationData: InformationType} ): JSX.Element {
@@ -44,6 +47,8 @@ const toggleTheme = ()=>{
                 <Route path={AppRoute.Registration} element = {<Registration/>}/>
                 <Route path={AppRoute.SignIn} element = {<Sign_in/>}/>
                 <Route path={`${AppRoute.Activate}/:uid/:token`} element = {<Success/>}/> 
+                <Route path={AppRoute.ResertPassword} element = {<RequestResertPassword/>}/> 
+                <Route path={`${AppRoute.ResertPasswordConfirm}/:uid/:token`} element = {<NewPassword/>}/> 
                 <Route path={AppRoute.PostsPage} element = {<PostsPage postsData = {postsData} title = 'My posts'/>}/>
                 <Route path={`${AppRoute.PostsPage}/:postId`} element = {<PostsPage postsData = {postsData} title = 'Post'/>}/>   
                 <Route path={AppRoute.AddPost} element = {<div style = {{marginTop: '4rem'}}>Страница добавленя поста</div>}/>    

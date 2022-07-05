@@ -16,13 +16,15 @@ function Success(): JSX.Element {
 
   return (
     <SuccessWrapper>
-    isActivated ? (
+    {isActivated ? (
+      <>
       <Title>Success</Title>
       <div> 
         <P>Activation successful. Email confirmed</P>  
         <P>Your registration is now completed</P>  
       </div>  
-      <Button url = {AppRoute.SignIn} maxWidth = '15rem'>Login</Button>
+      <Button url = {AppRoute.SignIn} maxWidth = '15rem'>Login</Button>      
+      </>
       ) 
       : (
       <>
@@ -32,6 +34,7 @@ function Success(): JSX.Element {
               setLoadingState(true)
               activateUser ({uid, token}).then(
                 ()=>{
+                  console.log('успешно')
                   setActivatedState(true)
                   setLoadingState(false)
                 }).catch (
@@ -43,7 +46,7 @@ function Success(): JSX.Element {
             }
 
         }}>Activate</Button>
-      </>) 
+      </>) }
     </SuccessWrapper>
   );
 }

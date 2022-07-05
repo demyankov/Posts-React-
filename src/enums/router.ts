@@ -3,9 +3,10 @@ export enum AppRoute {
     Information = '/information',
     Registration = '/registration',
     SignIn = '/signIn',
-    Confirmation = '/registration/confirmation',
-    Success = '/success',
+    Activate = '/activate',
     PostsPage = '/posts',    
     AddPost = '/posts/addPost',
-    NotFound = '/notFound'
+    NotFound = '/notFound',
+    ResertPassword = '/resert_password',
+    ResertPasswordConfirm = '/password/reset/confirm',
   }
