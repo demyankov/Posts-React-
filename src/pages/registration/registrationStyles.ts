@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const RegistrationWrapper = styled.form`
+export const RegistrationWrapper = styled.div`
 display: flex;
 flex-direction: column;
 gap: 1.5rem;
@@ -10,6 +10,14 @@ min-height: 100vh;
 max-width: 30%;
 margin-left: auto;
 margin-right: auto;
+`
+
+export const  RegistrationFormWrapper = styled.form`
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+min-height: 100%;
+width: 100%;
 `
 
 export const P = styled.p`

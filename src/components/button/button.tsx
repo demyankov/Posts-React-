@@ -6,7 +6,8 @@ import { Buttons } from "./buttonType";
 function Button({ children, maxWidth, click, url, ...otherProps }: Buttons) { 
   return (
     <ButtonWrapper maxWidth = {maxWidth}>
-      <Link to = {url} onClick={click}>{children}</Link>
+      <Link to = {url} onClick={click} className={otherProps?.disabled}>{children}       
+      </Link>
     </ButtonWrapper>
   );
 }

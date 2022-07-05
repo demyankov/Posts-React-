@@ -3,9 +3,9 @@ export enum AppRoute {
     Information = '/information',
     Registration = '/registration',
     SignIn = '/signIn',
-    Confirmation = '/confirmation',
+    Confirmation = '/registration/confirmation',
     Success = '/success',
     PostsPage = '/posts',    
     AddPost = '/posts/addPost',
-    NotFound = '404'
+    NotFound = '/notFound'
   }

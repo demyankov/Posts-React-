@@ -19,6 +19,14 @@ a {  text-decoration: none;
     max-width: 100%;
     width: 100%;
 
+   
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: #bbb;
+    border: #aaa 2px solid;
+  }  
+
   &:hover {
     background-color: #fff;
     color: blue;

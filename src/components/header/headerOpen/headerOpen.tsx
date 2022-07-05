@@ -26,7 +26,7 @@ function HeaderOpenOut() {
 }
 
 function HeaderOpen() {  
-  const isLogIn = true // пока так
+  const isLogIn = false // пока так
 
   return (
     <Wrapper>

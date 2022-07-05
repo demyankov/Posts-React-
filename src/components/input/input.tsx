@@ -1,13 +1,17 @@
-import React, {useState } from "react";
+import React from "react";
 import { InputWrapper, Label, InputTag } from "./inputStyles";
 
-function Input({ label }: { label: String }): JSX.Element {
-  const [inputValue, setInputValue] = useState <string | null> (null)
+export interface InputType
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  error?: string;
+  label: string;
+}
 
+function Input({ label, id, error, ...props}: InputType): JSX.Element {
   return (
     <InputWrapper>
-      <Label>{label}</Label>
-      <InputTag onChange = {(e)=>{setInputValue(e.target.value)}} type="text" />
+      <Label htmlFor={id}>{label}</Label>
+      <InputTag id={id} type={props.type} onChange = {props.onChange}/>
     </InputWrapper>
   );
 }
