@@ -1,5 +1,5 @@
-// const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users`;
-const apiPath = 'https://studapi.teachmeskills.by/auth/users/reset_password_confirm/';
+const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users/reset_password_confirm/`;
+
 
 export interface NewPasswordConfirmType {
     // abortController?: AbortController;
@@ -8,7 +8,7 @@ export interface NewPasswordConfirmType {
     new_password: string,
 }
 
-export async function newPasswordConfirmType ({...querryBody}:NewPasswordConfirmType):
+export async function ConfirmPasswordResert ({...querryBody}:NewPasswordConfirmType):
   Promise<void> {
     const headers = new Headers();
     headers.append('content-Type', 'application/json')

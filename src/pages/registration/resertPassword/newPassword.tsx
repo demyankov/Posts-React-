@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
-import { newPasswordConfirmType } from "../../../api/newPassword";
+import { ConfirmPasswordResert} from "../../../api/newPassword";
 import Button from "../../../components/button/button";
 import Input from "../../../components/input/input";
 import { FormWrapper, H2, Wrapper } from "./resertPasswordStyles"
@@ -31,7 +31,7 @@ const {uid, token} = useParams <{uid:string, token:string }> ()
         } click = {()=>{
             if (uid && token) {
                 setLoadingState(true)
-                newPasswordConfirmType({"uid": uid, "token": token, "new_password": newPassword.password})
+                ConfirmPasswordResert({"uid": uid, "token": token, "new_password": newPassword.password})
                 .then(()=>{
                   setLoadingState(false)
                   setPasswordResert(true)

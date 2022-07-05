@@ -1,5 +1,4 @@
-// const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users`;
-const apiPath = 'https://studapi.teachmeskills.by/auth/users/';
+const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users`;
 
 export interface RegisterUserResponseType {
   username: string,

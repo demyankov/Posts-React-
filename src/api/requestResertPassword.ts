@@ -1,5 +1,4 @@
-// const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users`;
-const apiPath = 'https://studapi.teachmeskills.by/auth/users/reset_password/';
+const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users/reset_password/`;
 
 export interface RequestResertPasswordType {
     // abortController?: AbortController;

@@ -1,5 +1,5 @@
-// const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users`;
-const apiPath = 'https://studapi.teachmeskills.by/auth/users/activation/';
+const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users/activation/`;
+
 
 export interface ActivaitonUserResponseType {
   uid: string,
