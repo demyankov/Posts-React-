@@ -7,7 +7,7 @@ gap: 1.5rem;
 align-items: center;
 justify-content: center;
 min-height: 100vh;
-max-width: 30%;
+max-width: clamp(340px, 30%, 500px);
 margin-left: auto;
 margin-right: auto;
 `

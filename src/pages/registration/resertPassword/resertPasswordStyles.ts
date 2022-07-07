@@ -16,7 +16,7 @@ margin: auto;
 display: flex;
 flex-direction: column;
 gap: 2rem;
-width: 40%;
+max-width: clamp(340px, 40%, 600px);
 padding: 4rem;
 border: 1px solid #ddd;
 
