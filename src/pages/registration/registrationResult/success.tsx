@@ -1,10 +1,10 @@
 import Button from "../../../components/button/button";
-import { P } from "../../signIn/signInStyles";
+import { P } from "../../login/loginStyles";
 import {SuccessWrapper} from './successStyles'
 import Title from "../../../components/title/title";
 import { AppRoute } from "../../../enums/router";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {activateUser } from "../../../api/activateUser";
 
 function Success(): JSX.Element {
@@ -23,13 +23,13 @@ function Success(): JSX.Element {
         <P>Activation successful. Email confirmed</P>  
         <P>Your registration is now completed</P>  
       </div>  
-      <Button url = {AppRoute.SignIn} maxWidth = '15rem'>Login</Button>      
+      <Button url = {AppRoute.Login} maxWidth = '15rem'>Login</Button>      
       </>
       ) 
       : (
       <>
         <P>Activate your account</P> 
-        <Button url = {AppRoute.SignIn} maxWidth = '15rem' disabled = {isLoading ? "disabled": ""} click={()=>{
+        <Button url = {AppRoute.Login} maxWidth = '15rem' disabled = {isLoading ? "disabled": ""} click={()=>{
             if (token && uid) {
               setLoadingState(true)
               activateUser ({uid, token}).then(

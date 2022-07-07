@@ -5,7 +5,7 @@ import { RegistrationButton, RegistrationWrapper } from "./loginRegistrationStyl
 function LoginRegistration(): JSX.Element {
   return (
     <RegistrationWrapper>
-      <RegistrationButton to={AppRoute.SignIn}>
+      <RegistrationButton to={AppRoute.Login}>
         Login
       </RegistrationButton>
       <RegistrationButton to={AppRoute.Registration}>

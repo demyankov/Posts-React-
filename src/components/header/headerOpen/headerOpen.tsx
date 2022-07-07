@@ -1,17 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { UserType } from "../../../api/login";
 import { AppRoute } from "../../../enums/router";
+import { useUserContext } from "../../Contexts/UserAuthorization/userContext";
 import { Wrapper } from "./headerOpenStyle";
 
 function HeaderOpenIn() {
+    const {logout} = useUserContext()
+
     return (    
       <>
-        <div><Link to={AppRoute.PostsPage}>All posts</Link></div>
+        <div><NavLink to={AppRoute.PostsPage}>All posts</NavLink></div>
         <div>
-            <Link to={AppRoute.PostsPage}>My posts</Link>
-            <Link to={AppRoute.AddPost}>Add posts</Link>            
+            <NavLink to={AppRoute.PostsPage}>My posts</NavLink>
+            <NavLink to={AppRoute.AddPost}>Add posts</NavLink>            
         </div>
-        <div><Link to ="/">Log out</Link></div> 
+        <div><Link to ="/" onClick={
+          ()=>{
+            logout()
+          }
+        }>Log out</Link></div> 
       </>      
     ); 
 }
@@ -19,18 +26,16 @@ function HeaderOpenIn() {
 function HeaderOpenOut() {
   return ( 
         <div>
-          <Link to={AppRoute.SignIn}>Login</Link>
-          <Link to={AppRoute.Registration}>Registration</Link>
+          <NavLink to={AppRoute.Login}>Login</NavLink>
+          <NavLink to={AppRoute.Registration}>Registration</NavLink>
         </div>     
   ); 
 }
 
-function HeaderOpen() {  
-  const isLogIn = false// пока так
-
+function HeaderOpen({user}: {user:UserType | null}) {  
   return (
     <Wrapper>
-     {isLogIn ? <HeaderOpenIn/>:<HeaderOpenOut/>}   
+     {user? <HeaderOpenIn/>:<HeaderOpenOut/>}   
     </Wrapper> 
   ); 
 }

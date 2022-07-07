@@ -29,3 +29,7 @@ export const P = styled.p`
     color: blue;
   }
   `
+
+export const Error = styled.p`
+color: red;
+`

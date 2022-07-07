@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { RegisterUser, RegisterUserResponseType, RegisterUserType } from "../../api/registerUser";
+import { RegisterUser, RegisterUserErrors, RegisterUserResponseType, RegisterUserType } from "../../api/registerUser";
 
 import LoginRegistration from "../../components/login_registration/login_registration";
 import RegistrationForm from "./registrationForm";
@@ -26,12 +26,12 @@ function Registration(): JSX.Element {
               console.log(data)
             }
           ).catch ((errors)=>{
-            setErrors(errors)
-            console.log(errors)
+            setErrors(errors as RegisterUserErrors)
             setLoading(false)
           }
           )
         }}
+        errors={errors}
      />
     </RegistrationWrapper>
     : <Confirmation>{registerData.email} </Confirmation> 

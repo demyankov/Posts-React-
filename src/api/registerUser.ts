@@ -1,4 +1,4 @@
-const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users`;
+const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users/`;
 
 export interface RegisterUserResponseType {
   username: string,
@@ -6,19 +6,24 @@ export interface RegisterUserResponseType {
   id: number,
 }
 
-export interface RegisterUserType {
-    // abortController?: AbortController;
+export interface RegisterUserType {    
     username: string,
     email: string,
     password: string,
+  }
+
+  export interface RegisterUserErrors {
+    username?: string[];
+    email?: string[];
+    password?: string[];
+    global?: string[];
   }
 
   export async function RegisterUser ({...querryBody}:RegisterUserType):
   Promise<RegisterUserResponseType> {
     const headers = new Headers();
     headers.append('content-Type', 'application/json')
-    const response = await fetch(apiPath, {
-        // signal?: AbortController?.signal,
+    const response = await fetch(apiPath, {        
         method: 'POST',
         headers,
         body: JSON.stringify(querryBody)

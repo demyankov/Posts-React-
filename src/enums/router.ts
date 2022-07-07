@@ -2,7 +2,7 @@ export enum AppRoute {
     Main = '/',
     Information = '/information',
     Registration = '/registration',
-    SignIn = '/signIn',
+    Login = '/login',
     Activate = '/activate',
     PostsPage = '/posts',    
     AddPost = '/posts/addPost',

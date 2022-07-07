@@ -16,4 +16,8 @@ a {
     font-size: 1.2rem;
 }
 
+a.active {
+  color:blue;
+}
+
 `

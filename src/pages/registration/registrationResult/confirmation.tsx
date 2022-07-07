@@ -17,7 +17,7 @@ function Confirmation({children}:{children?: React.ReactNode}): JSX.Element {
         </P>
         <P>Please check your email</P>
       </div>     
-      <Button url = {AppRoute.SignIn} maxWidth = '15rem'>Login</Button>
+      <Button url = {AppRoute.Login} maxWidth = '15rem'>Login</Button>
     </ConfirmationWrapper>
   );
 }

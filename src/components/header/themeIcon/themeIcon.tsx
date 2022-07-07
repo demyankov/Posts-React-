@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import { Icon } from "./themeIconStyles";
 import sunSvg from "../../images/sun.svg";
 import moonSvg from "../../images/moon.svg";
-import { ThemeContext } from "../../AppThemeProvider/ThemeContext";
-import { themes } from "../../AppThemeProvider/theme";
+import { themes } from "../../Contexts/AppThemeProvider/theme";
+import { ThemeContext } from "../../Contexts/AppThemeProvider/ThemeContext";
 
 function ThemeIcon() {
 //   const currentTheme = useContext(ThemeContext)
@@ -23,7 +23,7 @@ function ThemeIcon() {
   // :<Icon onClick = {click} src={moonSvg} alt="User icon" />
   // )
 
-  console.log(themes)
+  // console.log(themes)
   return  ( 
   <ThemeContext.Consumer>
     {({toggleTheme}:any) =>  {    

@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../components/button/button";
 import { AppRoute } from "../../enums/router";
-import { Content, Wrapper, MainTitle } from "./mainPageStyles";
+import { Content, Wrapper, MainTitle} from "./mainPageStyles";
 
 function MainPage():JSX.Element {
   return (

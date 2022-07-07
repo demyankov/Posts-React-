@@ -1,13 +1,12 @@
 const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users/activation/`;
 
-
 export interface ActivaitonUserResponseType {
   uid: string,
   token: string,
 }
 
 export interface ActivaitonUserType {
-    // abortController?: AbortController;
+    abortController?: AbortController;
     uid: string,
     token: string,
 }
@@ -26,7 +25,7 @@ export async function activateUser ({...querryBody}:ActivaitonUserType):
 
   if (response.ok){ 
     return await response.json()
-    }
+  }
   
   return Promise.reject({
     status: response.status,

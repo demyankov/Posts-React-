@@ -21,9 +21,9 @@ const {uid, token} = useParams <{uid:string, token:string }> ()
           <FormWrapper>
             {!isPasswordResert ?(
               <>
-               <Input label = "Password" onChange={(e)=>{setNewPassword({...newPassword, "password": e.target.value})
+               <Input type = "password" label = "Password" onChange={(e)=>{setNewPassword({...newPassword, "password": e.target.value})
                console.log(newPassword)}}/>
-               <Input label = "Confirm password" onChange={(e)=>{setNewPassword({...newPassword, "confirmPassword": e.target.value})
+               <Input type = "password" label = "Confirm password" onChange={(e)=>{setNewPassword({...newPassword, "confirmPassword": e.target.value})
                console.log(newPassword)}}/>
               <Button maxWidth="100%" disabled = {
             !newPassword.password ||
@@ -45,7 +45,7 @@ const {uid, token} = useParams <{uid:string, token:string }> ()
                </>)
           :(
             <>
-              <p>Password successfully changed</p>
+              <h3>Password successfully changed</h3>
               <Button maxWidth="100%" url="/signIn">Login</Button> 
             </>)
           }

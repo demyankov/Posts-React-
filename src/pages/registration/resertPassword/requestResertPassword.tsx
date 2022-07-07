@@ -20,7 +20,7 @@ function RequestResertPassword(): JSX.Element {
           <FormWrapper>
             {!isEmailSent?(
               <>
-              <Input label = "Email" type="email" onChange={(e)=>{setEmail({"email":e.target.value})}}/>
+              <Input autoComplete="email" name = "email" label = "Email" type="email" onChange={(e)=>{setEmail({"email":e.target.value})}}/>
               <Button maxWidth="100%" disabled = {!email.email || isLoading ? "disabled": ""}
               click = {()=>{
                 setLoadingState(true)

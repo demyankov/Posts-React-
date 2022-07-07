@@ -1,8 +1,6 @@
 import styled from "@emotion/styled"
 
-export const Wrapper = styled.div<{currentTheme:any}>`
+export const Wrapper = styled.div`
 padding: 1rem;
 min-height: 100vh;
-background-color: ${props => props.currentTheme?.colors?.background};
-background-color: ${props => props.currentTheme?.colors?.color};
 `

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import {RegisterUserType } from "../../api/registerUser";
+import {RegisterUserErrors, RegisterUserType } from "../../api/registerUser";
 import Button from "../../components/button/button";
 import Input from "../../components/input/input";
 import { AppRoute } from "../../enums/router";
-import { RegistrationFormWrapper } from "./registrationStyles";
+import { Error, RegistrationFormWrapper } from "./registrationStyles";
 
 interface UserRegistrationDataType {
     username: string;
@@ -12,7 +12,25 @@ interface UserRegistrationDataType {
     confirmPassword: string;
 }
 
-function RegistrationForm({onSubmit}: {onSubmit: (formData: RegisterUserType)=>void}): JSX.Element {
+function getPasswordErrors(
+    formData: UserRegistrationDataType,
+    errors: RegisterUserErrors
+  ) {
+    if (errors.password) {
+      return errors.password.join('. ');
+    }
+    if (
+      formData.password &&
+      formData.confirmPassword &&
+      formData.password !== formData.confirmPassword
+    ) {
+      return 'Passwords do not match';
+    }
+  
+    return '';
+  }
+
+function RegistrationForm({onSubmit, errors}: {onSubmit: (formData: RegisterUserType)=>void, errors:RegisterUserErrors}): JSX.Element {
 
     const [formData, setFormData] = useState <UserRegistrationDataType> (
         {
@@ -29,26 +47,36 @@ function RegistrationForm({onSubmit}: {onSubmit: (formData: RegisterUserType)=>v
             onChange={(e) => {
             setFormData((prevState) => ({...prevState, username: e.target.value }));
             }}
+            name="Name"
             label="Name"
+            autoComplete="text"
         />
         <Input       
             onChange={(e) => {
             setFormData((prevState) => ({...prevState, email: e.target.value})); 
             }}
+            type="email"
+            name="email"
             label="Email"
+            autoComplete="email"
         />
         <Input        
             onChange={(e) => {
             setFormData((prevState) => ({
             ...prevState, password: e.target.value }));}}
             label="Password"
+            type="password"
+            autoComplete="off"
         />
         <Input
             onChange={(e) => {
             setFormData((prevState) => ({
             ...prevState, confirmPassword:e.target.value }));}}
             label="Confirm Password"
+            type="password"
+            autoComplete="off"
         />  
+        <Error>{getPasswordErrors(formData, errors)}</Error>
       <Button 
         disabled = {
             !formData.username ||
