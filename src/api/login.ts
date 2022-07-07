@@ -60,8 +60,7 @@ export async function userAuthorization({...token}: ResponseTokenType): Promise<
       return await responseUser.json() as UserType
     }
     
- 
-    return Promise.reject({
+     return Promise.reject({
       status: responseUser.status,
       errors: [{ global: "Avtorization failed!" }],
     });

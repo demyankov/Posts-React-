@@ -10,9 +10,6 @@ import {PostType, InformationType} from '../src/data/dataType'
 import {Container } from "./AppStyles";
 import PostsPage from "./pages/posts/postsPage";
 import Information from "./pages/information/information";
-import {useState } from "react";
-import { themes} from "./components/Contexts/AppThemeProvider/theme";
-import { ThemeContext } from "./components/Contexts/AppThemeProvider/ThemeContext";
 import AppWrapper from "./components/appWrapper/appWrapper";
 import MainLayout from "./components/mainLayout";
 import { AppRoute } from "./enums/router";
@@ -22,21 +19,12 @@ import RequestResertPassword from "./pages/registration/resertPassword/requestRe
 import NewPassword from "./pages/registration/resertPassword/newPassword";
 import { UserContextProvider } from "./components/Contexts/UserAuthorization/userContext";
 import Login from "./pages/login/login";
-
+import { AppThemeProvider } from "./components/Contexts/AppThemeProvider/AppThemeProvider";
 
 export function App({postsData, informationData}:{postsData:PostType[], informationData: InformationType} ): JSX.Element {
-  
-const [currentTheme, setCurrentTheme] : any = useState (themes.light)
-
-const toggleTheme = ()=>{
-  currentTheme === themes.light
-  ?setCurrentTheme(themes.dark)
-  :setCurrentTheme(themes.light)
-}
-
- return (
-    <ThemeContext.Provider value={{currentTheme,toggleTheme}}>      
-        <UserContextProvider>
+   return (      
+    <AppThemeProvider>
+      <UserContextProvider>
         <AppWrapper>        
         <Container>   
           <BrowserRouter>  
@@ -51,7 +39,7 @@ const toggleTheme = ()=>{
                 <Route path={`${AppRoute.ResertPasswordConfirm}/:uid/:token`} element = {<NewPassword/>}/> 
                 <Route path={AppRoute.PostsPage} element = {<PostsPage postsData = {postsData} title = 'My posts'/>}/>
                 <Route path={`${AppRoute.PostsPage}/:postId`} element = {<PostsPage postsData = {postsData} title = 'Post'/>}/>   
-                <Route path={AppRoute.AddPost} element = {<div style = {{marginTop: '4rem'}}>Страница добавленя поста</div>}/>    
+                <Route path={AppRoute.AddPost} element = {<div style = {{marginTop: '4rem'}}>Страница добавления поста</div>}/>    
                 <Route path={AppRoute.NotFound} element={<NotFound/>}/> 
                 <Route path="*" element={<Navigate to={AppRoute.NotFound} replace/>}/>
               </Route>
@@ -59,8 +47,8 @@ const toggleTheme = ()=>{
           </BrowserRouter>   
         </Container>
         </AppWrapper> 
-        </UserContextProvider>
-      </ThemeContext.Provider>
+      </UserContextProvider>    
+      </AppThemeProvider>  
   );
 }
 
