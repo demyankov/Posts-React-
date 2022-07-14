@@ -7,7 +7,6 @@ import { ThemeVariant } from "../../Contexts/AppThemeProvider/theme";
 
 function ThemeSwitcher() {
   const { themeVariant, setThemeVariant } = useAppThemeController();
-  console.log(themeVariant)
 
   const iconSrc = ()=>themeVariant === ThemeVariant.Light?sunSvg:moonSvg
    
@@ -18,7 +17,6 @@ function ThemeSwitcher() {
       } else {setThemeVariant(ThemeVariant.Light)}
       }} src={iconSrc()}/>
   )
-
 }
 
 export default ThemeSwitcher;

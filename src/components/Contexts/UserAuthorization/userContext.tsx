@@ -28,7 +28,7 @@ export function UserContextProvider ({children}:{children:React.ReactNode}):JSX.
         user,
         login:async (email:string, password:string)=>{
            const token = await getToken({email, password})
-           const userResponse = await userAuthorization(token)
+           const userResponse = await userAuthorization()
            setUser(userResponse) 
         },
         logout:()=>{
@@ -37,7 +37,7 @@ export function UserContextProvider ({children}:{children:React.ReactNode}):JSX.
             setUser(null);
         },    
         userAuthorization: async ({...token}: ResponseTokenType)=>{            
-            const userResponse = await userAuthorization(token)
+            const userResponse = await userAuthorization()
             setUser(userResponse) 
             }
 }),[user?.id])

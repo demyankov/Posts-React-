@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {informationData, postsData} from '../src/data/data'
+import { informationData } from './pages/information/informationType';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 root.render(  
-      <App postsData = {postsData} informationData = {informationData}/> 
+      <App informationData = {informationData}/> 
 
 );
 

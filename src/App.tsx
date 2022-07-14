@@ -6,7 +6,6 @@ import {
   Navigate
 } from "react-router-dom";
 import Registration from "./pages/registration/registration";
-import {PostType, InformationType} from '../src/data/dataType'
 import {Container } from "./AppStyles";
 import PostsPage from "./pages/posts/postsPage";
 import Information from "./pages/information/information";
@@ -20,8 +19,9 @@ import NewPassword from "./pages/registration/resertPassword/newPassword";
 import { UserContextProvider } from "./components/Contexts/UserAuthorization/userContext";
 import Login from "./pages/login/login";
 import { AppThemeProvider } from "./components/Contexts/AppThemeProvider/AppThemeProvider";
+import { InformationType } from "./pages/information/informationType";
 
-export function App({postsData, informationData}:{postsData:PostType[], informationData: InformationType} ): JSX.Element {
+export function App({informationData}:{informationData: InformationType} ): JSX.Element {
    return (      
     <AppThemeProvider>
       <UserContextProvider>
@@ -37,8 +37,8 @@ export function App({postsData, informationData}:{postsData:PostType[], informat
                 <Route path={`${AppRoute.Activate}/:uid/:token`} element = {<Success/>}/> 
                 <Route path={AppRoute.ResertPassword} element = {<RequestResertPassword/>}/> 
                 <Route path={`${AppRoute.ResertPasswordConfirm}/:uid/:token`} element = {<NewPassword/>}/> 
-                <Route path={AppRoute.PostsPage} element = {<PostsPage postsData = {postsData} title = 'My posts'/>}/>
-                <Route path={`${AppRoute.PostsPage}/:postId`} element = {<PostsPage postsData = {postsData} title = 'Post'/>}/>   
+                <Route path={AppRoute.PostsPage} element = {<PostsPage title = 'All posts'/>}/>
+                <Route path={`${AppRoute.PostsPage}/:postId`} element = {<PostsPage title = 'Post' btnText = "Back" url = {AppRoute.PostsPage}/>}/>   
                 <Route path={AppRoute.AddPost} element = {<div style = {{marginTop: '4rem'}}>Страница добавления поста</div>}/>    
                 <Route path={AppRoute.NotFound} element={<NotFound/>}/> 
                 <Route path="*" element={<Navigate to={AppRoute.NotFound} replace/>}/>

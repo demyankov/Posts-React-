@@ -1,4 +1,5 @@
-import { PostType } from "../../../data/dataType";
+
+import { PostType } from "../../../api/getPosts";
 import { CardDate, CardImage, CardImageWrapper, CardText, CardTitle, CardWrapper } from "./cardStyles";
 
 function Card({post}: {post:PostType}): JSX.Element {
@@ -8,7 +9,7 @@ function Card({post}: {post:PostType}): JSX.Element {
         <CardImage src={post.image} alt="About post"/>      
       </CardImageWrapper>
       <CardTitle to = {`/posts/${post.id}`}>{post.title}</CardTitle>
-      <CardText>{post.text}</CardText>
+      {/* <CardText>{post.text}</CardText> */}
       <CardDate>{post.date}</CardDate>
     </CardWrapper>
   );

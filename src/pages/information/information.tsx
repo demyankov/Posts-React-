@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { H2 } from "../../components/title/tittleStyles";
-import { InformationType } from "../../data/dataType";
 import { TabBar, Text, Wrapper} from "./informationSlyles";
+import { InformationType } from "./informationType";
 import Tab from "./tab/tab";
 
 function Information({informationData}: {informationData:InformationType}): JSX.Element {
