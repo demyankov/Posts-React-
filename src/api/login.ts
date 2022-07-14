@@ -45,8 +45,6 @@ export async function getToken({
   });
 }
 
-let refreshQuerryCount = 0;
-
 export async function userAuthorization(): Promise<UserType> {
   const TokenAccess = localStorage.getItem(LocalStorageKey.TokenAccess);
 
