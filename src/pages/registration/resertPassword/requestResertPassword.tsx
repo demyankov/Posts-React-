@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { RegisterUserErrors } from "../../../api/registerUser";
 import { requestResertPassword } from "../../../api/requestResertPassword";
 import Button from "../../../components/button/button";
 import Input from "../../../components/input/input";
+import { Error } from "../../../components/styles/error";
 import { FormWrapper, H2, Wrapper } from "./resertPasswordStyles";
 
 
@@ -11,7 +13,7 @@ function RequestResertPassword(): JSX.Element {
       const [email, setEmail] = useState({"email":""})
       const [isEmailSent, setEmailSent] = useState(false)
       const [isLoading, setLoadingState] = useState(false);
-      const [errors, setErrors] = useState({});
+      const [errors, setErrors] = useState <Pick <RegisterUserErrors, "global">> ({});
         
       return (
         <Wrapper>
@@ -21,7 +23,8 @@ function RequestResertPassword(): JSX.Element {
             {!isEmailSent?(
               <>
               <Input autoComplete="email" name = "email" label = "Email" type="email" onChange={(e)=>{setEmail({"email":e.target.value})}}/>
-              <Button maxWidth="100%" disabled = {!email.email || isLoading ? "disabled": ""}
+              {errors.global ? <Error>{errors.global}</Error> : null}
+                <Button maxWidth="100%" disabled={!email.email || isLoading ? "disabled" : ""}
               click = {()=>{
                 setLoadingState(true)
                 requestResertPassword(email).then(()=>{

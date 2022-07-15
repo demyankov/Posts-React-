@@ -10,8 +10,8 @@ function Registration(): JSX.Element {
 
   const [registerData, setRegisterData] = useState<RegisterUserResponseType | null>(null);
   const [isLoading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({});
-  
+  const [errors, setErrors] = useState <RegisterUserErrors> ({});
+console.log(errors)
     return (      
     !registerData?
     <RegistrationWrapper>
@@ -23,9 +23,9 @@ function Registration(): JSX.Element {
             (data)=>{
               setRegisterData(data)
               setLoading(false)
-              console.log(data)
+             
             }
-          ).catch ((errors)=>{
+          ).catch (({errors})=>{
             setErrors(errors as RegisterUserErrors)
             setLoading(false)
           }

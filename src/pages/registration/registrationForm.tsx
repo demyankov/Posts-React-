@@ -2,33 +2,11 @@ import React, { useState } from "react";
 import {RegisterUserErrors, RegisterUserType } from "../../api/registerUser";
 import Button from "../../components/button/button";
 import Input from "../../components/input/input";
+import { Error } from "../../components/styles/error";
 import { AppRoute } from "../../enums/router";
-import { Error, RegistrationFormWrapper } from "./registrationStyles";
-
-interface UserRegistrationDataType {
-    username: string;
-    email: string;
-    password: string;
-    confirmPassword: string;
-}
-
-function getPasswordErrors(
-    formData: UserRegistrationDataType,
-    errors: RegisterUserErrors
-  ) {
-    if (errors.password) {
-      return errors.password.join('. ');
-    }
-    if (
-      formData.password &&
-      formData.confirmPassword &&
-      formData.password !== formData.confirmPassword
-    ) {
-      return 'Passwords do not match';
-    }
-  
-    return '';
-  }
+import { getPasswordErrors } from "../../utils/getPasswordErrors";
+import { UserRegistrationDataType } from "./RegistrationFormType";
+import {RegistrationFormWrapper } from "./registrationStyles";
 
 function RegistrationForm({onSubmit, errors}: {onSubmit: (formData: RegisterUserType)=>void, errors:RegisterUserErrors}): JSX.Element {
 
@@ -51,6 +29,7 @@ function RegistrationForm({onSubmit, errors}: {onSubmit: (formData: RegisterUser
             label="Name"
             autoComplete="text"
         />
+        {errors.username? <Error>{errors.username.join('. ')}</Error>: null}
         <Input       
             onChange={(e) => {
             setFormData((prevState) => ({...prevState, email: e.target.value})); 
@@ -60,6 +39,7 @@ function RegistrationForm({onSubmit, errors}: {onSubmit: (formData: RegisterUser
             label="Email"
             autoComplete="email"
         />
+        {errors.email? <Error>{errors.email.join('. ')}</Error>: null}
         <Input        
             onChange={(e) => {
             setFormData((prevState) => ({
@@ -77,7 +57,7 @@ function RegistrationForm({onSubmit, errors}: {onSubmit: (formData: RegisterUser
             autoComplete="off"
         />  
         <Error>{getPasswordErrors(formData, errors)}</Error>
-      <Button 
+             <Button 
         disabled = {
             !formData.username ||
             !formData.email ||
