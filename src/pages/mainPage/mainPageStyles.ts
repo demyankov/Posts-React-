@@ -1,26 +1,25 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.5rem;
-    min-height: 100vh;
-    width: 30%;
-    min-width: 500px;
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-5);
+  min-height: 100vh;
+  width: 40%;
+  min-width: 300px;
+`;
 
 export const MainTitle = styled.div`
-    font-size: 40px;
-    font-weight: 700;
-    
-    & span {
-        font-size: 40px;
-        color: blue;
-    }
-`
+  font-size: var(--headline-2-font-size);
+  font-weight: var(--headline-2-font-weight);
+
+  & span {
+    font-size: var(--headline-2-font-size);
+    color: var(--color-primary);
+  }
+`;
 
 export const Content = styled.p`
-    font-size: 1.5rem;
-    text-align: justify;
-`
+  text-align: justify;
+`;

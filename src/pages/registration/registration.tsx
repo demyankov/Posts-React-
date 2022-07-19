@@ -11,7 +11,7 @@ function Registration(): JSX.Element {
   const [registerData, setRegisterData] = useState<RegisterUserResponseType | null>(null);
   const [isLoading, setLoading] = useState(false);
   const [errors, setErrors] = useState <RegisterUserErrors> ({});
-console.log(errors)
+
     return (      
     !registerData?
     <RegistrationWrapper>

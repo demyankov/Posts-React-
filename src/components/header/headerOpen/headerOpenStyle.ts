@@ -1,23 +1,23 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-flex:1;
-display: grid;
-grid-template-columns: auto 1fr auto;
-grid-column-gap: 2rem;
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: var(--spacing-5);
 
-div {
-  display:flex;
-  flex-direction: column;
-  gap:1rem;
-}
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-7);
+  }
 
-a {
-    font-size: 1.2rem;
-}
+  a {
+    font-size: var(--body-font-size);
+    color: var(--color-text);
+  }
 
-a.active {
-  color:blue;
-}
-
-`
+  a.active {
+    color: var(--color-primary);
+  }
+`;

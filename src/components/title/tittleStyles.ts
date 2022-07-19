@@ -1,8 +1,8 @@
-
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const H2 = styled.h2`
-font-size: 1.8rem;
-text-align: center;
-color: blue;
-`
+  font-size: var(--headline-2-font-size);
+  text-align: center;
+  margin-bottom: 0;
+  color: var(--color-text-secondary);
+`;

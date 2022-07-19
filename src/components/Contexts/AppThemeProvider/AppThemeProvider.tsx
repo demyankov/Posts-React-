@@ -1,7 +1,9 @@
+import { Global, ThemeProvider } from "@emotion/react";
 import React, { useMemo, useState } from "react";
 import { AppThemeControllerContext } from "./AppThemeControllerContext";
+import { getRebootCSS } from "./reboot";
 
-import { ThemeVariant } from "./theme";
+import { appTheme, ThemeVariant } from "./theme";
 
 
 export function AppThemeProvider ({children}:{children:React.ReactNode}) {
@@ -11,10 +13,14 @@ export function AppThemeProvider ({children}:{children:React.ReactNode}) {
          {themeVariant, setThemeVariant }
     ),[themeVariant])
 
-return(
-    <AppThemeControllerContext.Provider value={contextValue}>
-        {children}
-    </AppThemeControllerContext.Provider>
+    return (
+        <>
+           <Global styles={getRebootCSS(themeVariant)} />
+            <AppThemeControllerContext.Provider value={contextValue}>
+                {children}
+            </AppThemeControllerContext.Provider>
+        </>
     )
+
 
 }

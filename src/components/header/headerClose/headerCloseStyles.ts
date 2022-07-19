@@ -1,10 +1,11 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const Icon = styled.img`
-max-height: 1.7rem;
-`
+  max-height: var(--spacing-5);
+`;
 
 export const Name = styled.p`
-  font-size: 1.5rem;
-  flex:1;
-`
+  font-size: var(--headline-3-font-size);
+  color: var(--color-bg-secondary);
+  flex: 1;
+`;
