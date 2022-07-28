@@ -16,11 +16,12 @@ import Success from "./pages/registration/registrationResult/success";
 import NotFound from "./pages/notFound/notFound";
 import RequestResertPassword from "./pages/registration/resertPassword/requestResertPassword";
 import NewPassword from "./pages/registration/resertPassword/newPassword";
-import { UserContextProvider, useUserContext } from "./components/Contexts/UserAuthorization/userContext";
+import { UserContextProvider} from "./components/Contexts/UserAuthorization/userContext";
 import Login from "./pages/login/login";
 import { AppThemeProvider } from "./components/Contexts/AppThemeProvider/AppThemeProvider";
 import { InformationType } from "./pages/information/informationType";
 import { PrivateRouter } from "./utils/privateRouter";
+import AddPost from "./pages/addPost/addPost";
 
 export function App({informationData}:{informationData: InformationType} ): JSX.Element {
    return (      
@@ -40,7 +41,7 @@ export function App({informationData}:{informationData: InformationType} ): JSX.
                 <Route path={`${AppRoute.ResertPasswordConfirm}/:uid/:token`} element = {<NewPassword/>}/> 
                 <Route path={AppRoute.PostsPage} element = {<PrivateRouter><PostsPage title = 'All posts'/></PrivateRouter>}/>
                 <Route path={`${AppRoute.PostsPage}/:postId`} element = {<PrivateRouter><PostsPage title = 'Post' btnText = "Back" url = {AppRoute.PostsPage}/></PrivateRouter>}/>   
-                <Route path={AppRoute.AddPost} element = {<PrivateRouter><div style = {{marginTop: '4rem'}}>Страница добавления поста</div></PrivateRouter>}/>    
+                <Route path={AppRoute.AddPost} element = {<PrivateRouter><AddPost></AddPost></PrivateRouter>}/>    
                 <Route path={AppRoute.NotFound} element={<NotFound/>}/> 
                 <Route path="*" element={<Navigate to={AppRoute.NotFound} replace/>}/>
               </Route>

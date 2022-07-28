@@ -59,7 +59,7 @@ export const TYPOGRAPHY = {
 
 export const SPACING = {
   mobile: {
-    L1: "56px",
+    L1: "60px",
     L2: "48px",
     L3: "36px",
     L4: "32px",
@@ -70,7 +70,7 @@ export const SPACING = {
     L9: "3px",
   },
   tablet: {
-    L1: "72px",
+    L1: "76px",
     L2: "56px",
     L3: "48px",
     L4: "40px",
@@ -81,7 +81,7 @@ export const SPACING = {
     L9: "3px",
   },
   desktop: {
-    L1: "80px",
+    L1: "88px",
     L2: "64px",
     L3: "48px",
     L4: "40px",

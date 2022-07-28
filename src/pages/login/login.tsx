@@ -16,7 +16,6 @@ function Login(): JSX.Element {
 
   const {login} = useUserContext ()
   const navigate = useNavigate()
-  console.log(errors.global)
 
   return (
     <SignInWrapper>
