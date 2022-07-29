@@ -11,7 +11,7 @@ function HeaderOpenIn() {
       <>
         <div><NavLink to={AppRoute.PostsPage}>All posts</NavLink></div>
         <div>
-            <NavLink to={AppRoute.PostsPage}>My posts</NavLink>
+            <NavLink to={AppRoute.MyPostsPage}>My posts</NavLink>
             <NavLink to={AppRoute.AddPost}>Add posts</NavLink>            
         </div>
         <div><Link to ="/" onClick={

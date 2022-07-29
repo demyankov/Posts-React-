@@ -5,6 +5,7 @@ export enum AppRoute {
   Login = "/login",
   Activate = "/activate",
   PostsPage = "/posts",
+  MyPostsPage = "/my_posts",
   AddPost = "/addPost",
   NotFound = "/notFound",
   ResertPassword = "/resert_password",

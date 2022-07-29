@@ -40,7 +40,9 @@ export function App({informationData}:{informationData: InformationType} ): JSX.
                 <Route path={AppRoute.ResertPassword} element = {<RequestResertPassword/>}/> 
                 <Route path={`${AppRoute.ResertPasswordConfirm}/:uid/:token`} element = {<NewPassword/>}/> 
                 <Route path={AppRoute.PostsPage} element = {<PrivateRouter><PostsPage title = 'All posts'/></PrivateRouter>}/>
-                <Route path={`${AppRoute.PostsPage}/:postId`} element = {<PrivateRouter><PostsPage title = 'Post' btnText = "Back" url = {AppRoute.PostsPage}/></PrivateRouter>}/>   
+                <Route path={AppRoute.MyPostsPage} element = {<PrivateRouter><PostsPage title = 'My posts' isMyPosts/></PrivateRouter>}/>
+                <Route path={`${AppRoute.PostsPage}/:postId`} element = {<PrivateRouter><PostsPage title = 'Post' btnText = "Back"/></PrivateRouter>}/> 
+                <Route path={`${AppRoute.MyPostsPage}/:postId`} element = {<PrivateRouter><PostsPage title = 'Post' btnText = "Back"/></PrivateRouter>}/>  
                 <Route path={AppRoute.AddPost} element = {<PrivateRouter><AddPost></AddPost></PrivateRouter>}/>    
                 <Route path={AppRoute.NotFound} element={<NotFound/>}/> 
                 <Route path="*" element={<Navigate to={AppRoute.NotFound} replace/>}/>

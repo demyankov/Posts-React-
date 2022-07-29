@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { addPost } from "../../api/addPost";
 import Button from "../../components/button/button";
 import Input from "../../components/input/input";
@@ -11,6 +12,8 @@ function AddPost():JSX.Element {
     const [text, setText] = useState <string>('')
     const [image, setImage] = useState <string>('')
 
+    const navigate = useNavigate()
+
     return (
       <Wrapper>
         <H2>Add Post</H2>
@@ -18,9 +21,9 @@ function AddPost():JSX.Element {
             <Input label = "Title" value={title} onChange= {(event)=>setTitle(event.target.value)}/>
             <Input label = "Text" value={text} onChange= {(event)=>setText(event.target.value)}/>
             <ButtonWrapper>
-                <Button maxWidth="7rem" url={AppRoute.PostsPage}>Cancel</Button> 
+                <Button maxWidth="7rem" click={()=>navigate(-1)}>Cancel</Button> 
                 <Button maxWidth="10rem"  disabled = {!title || !text ? "disabled": ""} 
-                        click={()=>{addPost({title: title,text: text,})}}>Add Post</Button> 
+                        click={()=>{addPost({title: title, text: text, image: "",lesson_num:15})}} url={AppRoute.MyPostsPage}>Add Post</Button> 
             </ButtonWrapper>
         </FormWrapper>       
       </Wrapper>
