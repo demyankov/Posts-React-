@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const apiPath = `${process.env.REACT_APP_API_PATH}/auth/users/activation/`;
 
 export interface ActivaitonUserResponseType {
@@ -6,7 +8,7 @@ export interface ActivaitonUserResponseType {
 }
 
 export interface ActivaitonUserType {
-  abortController?: AbortController;
+  // abortController?: AbortController;
   uid: string;
   token: string;
 }
@@ -14,22 +16,12 @@ export interface ActivaitonUserType {
 export async function activateUser({
   ...querryBody
 }: ActivaitonUserType): Promise<ActivaitonUserResponseType> {
-  const headers = new Headers();
-  headers.append("content-Type", "application/json");
-
-  const response = await fetch(apiPath, {
+  const { data } = await axios(apiPath, {
     // signal?: AbortController?.signal,
     method: "POST",
-    headers,
-    body: JSON.stringify(querryBody),
+    headers: { "content-Type": "application/json" },
+    data: querryBody,
   });
 
-  if (response.ok) {
-    return await response.json();
-  }
-
-  return Promise.reject({
-    status: response.status,
-    errors: [{ global: response.statusText }],
-  });
+  return await data;
 }
