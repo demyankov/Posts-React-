@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom"
 import { ConfirmPasswordResert} from "../../../api/newPassword";
 import Button from "../../../components/button/button";
@@ -21,10 +21,9 @@ const {uid, token} = useParams <{uid:string, token:string }> ()
           <FormWrapper>
             {!isPasswordResert ?(
               <>
-               <Input type = "password" label = "Password" onChange={(e)=>{setNewPassword({...newPassword, "password": e.target.value})
-               console.log(newPassword)}}/>
+               <Input type = "password" label = "Password" onChange={(e)=>{setNewPassword({...newPassword, "password": e.target.value})}}/>
                <Input type = "password" label = "Confirm password" onChange={(e)=>{setNewPassword({...newPassword, "confirmPassword": e.target.value})
-               console.log(newPassword)}}/>
+               }}/>
               <Button maxWidth="100%" disabled = {
             !newPassword.password ||
             !newPassword.confirmPassword || newPassword.password !== newPassword.confirmPassword ? "disabled": ""
@@ -34,13 +33,11 @@ const {uid, token} = useParams <{uid:string, token:string }> ()
                 ConfirmPasswordResert({"uid": uid, "token": token, "new_password": newPassword.password})
                 .then(()=>{
                   setLoadingState(false)
-                  setPasswordResert(true)
-                  console.log(newPassword,isPasswordResert, isLoading, errors)
+                  setPasswordResert(true)                
               }
                   ).catch((errors)=>{
                   setLoadingState(false)
-                  setErrors(errors)
-                  console.log(newPassword,isPasswordResert, isLoading, errors)})              
+                  setErrors(errors)               })              
                }}}url="">Resert</Button>
                </>)
           :(

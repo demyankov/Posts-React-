@@ -19,8 +19,5 @@ export function getPasswordErrors(
   if (errors.global) {
     return errors.global.join(". ");
   }
-
-  console.log(errors.email);
-
   return "";
 }

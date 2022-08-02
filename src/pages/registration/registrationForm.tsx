@@ -8,7 +8,7 @@ import { getPasswordErrors } from "../../utils/getPasswordErrors";
 import { UserRegistrationDataType } from "./RegistrationFormType";
 import {RegistrationFormWrapper } from "./registrationStyles";
 
-function RegistrationForm({onSubmit, errors}: {onSubmit: (formData: RegisterUserType)=>void, errors:RegisterUserErrors}): JSX.Element {
+function RegistrationForm({isLoading, onSubmit, errors}: {isLoading:boolean, onSubmit: (formData: RegisterUserType)=>void, errors:RegisterUserErrors}): JSX.Element {
 
     const [formData, setFormData] = useState <UserRegistrationDataType> (
         {
@@ -59,6 +59,7 @@ function RegistrationForm({onSubmit, errors}: {onSubmit: (formData: RegisterUser
         <Error>{getPasswordErrors(formData, errors)}</Error>
              <Button 
         disabled = {
+            !isLoading||
             !formData.username ||
             !formData.email ||
             !formData.password ||

@@ -17,13 +17,13 @@ function Registration(): JSX.Element {
     <RegistrationWrapper>
        <LoginRegistration />
       <RegistrationForm 
+        isLoading
          onSubmit = {(formData:RegisterUserType) =>{
           setLoading(true)
           RegisterUser(formData).then(
             (data)=>{
               setRegisterData(data)
-              setLoading(false)
-             
+              setLoading(false)             
             }
           ).catch (({errors})=>{
             setErrors(errors as RegisterUserErrors)

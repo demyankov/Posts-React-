@@ -4,7 +4,7 @@ import {SuccessWrapper} from './successStyles'
 import Title from "../../../components/title/title";
 import { AppRoute } from "../../../enums/router";
 import { useParams } from "react-router-dom";
-import { useContext, useState } from "react";
+import {useState } from "react";
 import {activateUser } from "../../../api/activateUser";
 
 function Success(): JSX.Element {
