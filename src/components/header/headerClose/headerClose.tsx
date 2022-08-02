@@ -1,5 +1,4 @@
-import { ThemeContext } from "@emotion/react";
-import React, { useContext } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppThemeController } from "../../Contexts/AppThemeProvider/AppThemeControllerContext";
 import { ThemeVariant } from "../../Contexts/AppThemeProvider/theme";

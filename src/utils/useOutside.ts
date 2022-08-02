@@ -1,5 +1,4 @@
-import { AnyRecord } from "dns";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useOutside (initialIsVisible: boolean) {
     const [isShow, setIsShow] = useState <boolean> (initialIsVisible)

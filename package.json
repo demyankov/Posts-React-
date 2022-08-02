@@ -15,6 +15,7 @@
     "axios": "^0.27.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-images-uploading": "^3.1.7",
     "react-router-dom": "6.3.0",
     "react-scripts": "5.0.1",
     "typescript": "4.7.3",
@@ -45,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-css-in-js": "1.5.1"
+    "babel-plugin-css-in-js": "1.5.1",
+    "prettier": "2.7.1"
   }
 }

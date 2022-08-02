@@ -1,5 +1,5 @@
 
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { LocalStorageKey } from "../../enums/localStorageKey";
 import {useUserContext } from "../Contexts/UserAuthorization/userContext";
 import { Wrapper } from "./appWrapperStyles";

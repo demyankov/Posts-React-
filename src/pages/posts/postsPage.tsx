@@ -41,7 +41,7 @@ return (<
     SectionPosts>
         <SectionPostsHeader>    
             <H2>{title}</H2>
-            {   currentPost.length==0                        
+            {   currentPost.length===0                        
                 ? <Button url = {AppRoute.AddPost} maxWidth = '6rem'>{btnText}</Button>
                 : <Button click={()=>navigate(-1)} maxWidth = '6rem'>{btnText}</Button>
             }          
@@ -49,7 +49,7 @@ return (<
         </SectionPostsHeader>        
         <PostsListWrapper>  
             <PostsMain>            
-            {   currentPost.length==0                        
+            {   currentPost.length===0                        
                 ?posts.map((post:PostType) => 
                     <Card post = {post} url = {location.pathname} key={post.id}/>)
                 : <CurrentPostPage post = {currentPost[0]}/>

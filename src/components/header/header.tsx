@@ -1,6 +1,5 @@
 import ButtonBurger from "./buttonBurger/buttonBurger";
 import {MainHeader} from "./headerStyles";
-import {useState } from "react";
 import HeaderClose from "./headerClose/headerClose";
 import HeaderOpen from "./headerOpen/headerOpen";
 import { useUserContext } from "../Contexts/UserAuthorization/userContext";
