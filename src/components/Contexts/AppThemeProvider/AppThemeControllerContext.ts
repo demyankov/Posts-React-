@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 import { ThemeVariant } from "./theme";
 
 export interface AppThemeController {
-  themeVariant: ThemeVariant;
+  themeVariant: ThemeVariant | string;
   setThemeVariant: (variant: ThemeVariant) => void;
 }
 
