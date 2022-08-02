@@ -17,7 +17,6 @@ import ImageUploading, {
   ImageListType,
   ImageUploadingPropsType,
 } from "react-images-uploading";
-import { reduceEachLeadingCommentRange } from "typescript";
 import { Error } from "../../components/styles/error";
 
 function AddPost(): JSX.Element {
@@ -100,8 +99,27 @@ function AddPost(): JSX.Element {
                 text: text,
                 image: image[0].file,
                 lesson_num: 15,
-              }).catch((err) => {
-                throw Error(err);
+              }).catch((errors) => {
+                {
+                  return (
+                    <div>
+                      {errors.maxNumber && (
+                        <span>Number of selected images exceed maxNumber</span>
+                      )}
+                      {errors.acceptType && (
+                        <span>Your selected file type is not allow</span>
+                      )}
+                      {errors.maxFileSize && (
+                        <span>Selected file size exceed maxFileSize</span>
+                      )}
+                      {errors.resolution && (
+                        <span>
+                          Selected file is not match your desired resolution
+                        </span>
+                      )}
+                    </div>
+                  );
+                }
               });
             }}
             url={AppRoute.MyPostsPage}
