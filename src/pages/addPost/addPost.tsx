@@ -17,7 +17,6 @@ import ImageUploading, {
   ImageListType,
   ImageUploadingPropsType,
 } from "react-images-uploading";
-import { Error } from "../../components/styles/error";
 
 function AddPost(): JSX.Element {
   const [title, setTitle] = useState<string>("");

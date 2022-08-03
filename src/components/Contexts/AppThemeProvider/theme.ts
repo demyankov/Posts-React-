@@ -81,7 +81,7 @@ export const SPACING = {
     L9: "3px",
   },
   desktop: {
-    L1: "112px",
+    L1: "96px",
     L2: "64px",
     L3: "48px",
     L4: "40px",

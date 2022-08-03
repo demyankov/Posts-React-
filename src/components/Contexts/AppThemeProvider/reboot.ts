@@ -73,14 +73,14 @@ export const getRebootCSS = (themeVariant: ThemeVariant) => css`
       --spacing-8: ${SPACING.tablet.L8};
     }
     @media (min-width: ${Breakpoints.Desktop}) {
-      --spacing-1: ${SPACING.mobile.L1};
-      --spacing-2: ${SPACING.mobile.L2};
-      --spacing-3: ${SPACING.mobile.L3};
-      --spacing-4: ${SPACING.mobile.L4};
-      --spacing-5: ${SPACING.mobile.L5};
-      --spacing-6: ${SPACING.mobile.L6};
-      --spacing-7: ${SPACING.mobile.L7};
-      --spacing-8: ${SPACING.mobile.L8};
+      --spacing-1: ${SPACING.desktop.L1};
+      --spacing-2: ${SPACING.desktop.L2};
+      --spacing-3: ${SPACING.desktop.L3};
+      --spacing-4: ${SPACING.desktop.L4};
+      --spacing-5: ${SPACING.desktop.L5};
+      --spacing-6: ${SPACING.desktop.L6};
+      --spacing-7: ${SPACING.desktop.L7};
+      --spacing-8: ${SPACING.desktop.L8};
     }
   }
   *,

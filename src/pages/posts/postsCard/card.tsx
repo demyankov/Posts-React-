@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { PostType } from "../../../api/getPosts";
 import {
   CardDate,
@@ -8,15 +8,15 @@ import {
   CardWrapper,
 } from "./cardStyles";
 
-function Card({ post, url }: { post: PostType; url: string }): JSX.Element {
-  const ad = useParams();
+function Card({ post }: { post: PostType }): JSX.Element {
+  const link = useLocation().pathname;
 
   return (
     <CardWrapper>
       <CardImageWrapper>
         <CardImage src={post.image} alt="About post" />
       </CardImageWrapper>
-      <CardTitle to={`/${url}/${post.id}`}>{post.title}</CardTitle>
+      <CardTitle to={`${link}/${post.id}`}>{post.title}</CardTitle>
       <CardDate>{post.date}</CardDate>
     </CardWrapper>
   );

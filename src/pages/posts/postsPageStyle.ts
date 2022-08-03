@@ -22,15 +22,16 @@ export let PostsMain = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-7);
-  flex: 3;
+  flex: 1;
 `;
 export let PostsPromo = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-height: 100vh;
   overflow-y: auto;
   gap: var(--spacing-7);
-  flex: 1;
+  min-width: 21rem;
   padding: var(--spacing-8);
   border-radius: var(--spacing-7);
   background-color: #aaa;
